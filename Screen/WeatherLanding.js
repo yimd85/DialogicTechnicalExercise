@@ -9,37 +9,34 @@ import { selectCity } from '../actions/index';
 class WeatherLanding extends Component {
     
     handlePress = async event => {
-        // console.log(event);
         await this.props.selectCity(event);
-        // await store.update('weather', { city: event.name })
         await this.props.navigation.navigate('CityWeather');
     }
 
-
-  render() {
-    return (
-      <View>
-        <Header 
-            centerComponent={{ text: 'My Weather App', style: { color: '#fff' } }}
-        />
-        <Card title="Your cities" >
-            {
-                this.props.cities.map((u, i) => {
-                    return (
-                        <ListItem
-                            key={i}
-                            roundAvatar
-                            title={u.name}
-                            avatar={{uri:u.avatar}}
-                            onPress={() => this.handlePress(u)}
-                        />
-                    );
-                })
-            }
-        </Card>
-      </View>
-    );
-  }
+    render() {
+        return (
+            <View>
+            <Header 
+                centerComponent={{ text: 'My Weather App', style: { color: '#fff' } }}
+            />
+                <Card title="Your cities" >
+                    {
+                        this.props.cities.map((u, i) => {
+                            return (
+                                <ListItem
+                                    key={i}
+                                    roundAvatar
+                                    title={u.name}
+                                    avatar={{uri:u.avatar}}
+                                    onPress={() => this.handlePress(u)}
+                                />
+                            );
+                        })
+                    }
+                </Card>
+            </View>
+        );
+    }
 }
 
 function mapStateToProps(state){
