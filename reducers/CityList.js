@@ -2,11 +2,11 @@ export default () => {
     return [
         {
             name: 'New York',
-            avatar: 'https://i.imgur.com/FGQs8MF.jpg'
+            avatar: 'https://i.imgur.com/s8ZGJ44.jpg'
         },
         {
             name: 'Boston',
-            avatar: 'https://i.imgur.com/rQKi2LE.jpg'
+            avatar: 'https://i.imgur.com/IASWa0a.jpg'
         },
         {
             name: 'Chicago',
@@ -14,7 +14,7 @@ export default () => {
         },
         {
             name: 'Seattle',
-            avatar: 'https://i.imgur.com/MjIHglA.jpg'
+            avatar: 'https://i.imgur.com/64Qb84w.png'
         },
         {
             name: 'Parsippany',

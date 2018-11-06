@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Dimensions, StyleSheet } from 'react-native';
+import { ScrollView, View, Dimensions, StyleSheet } from 'react-native';
 import { Text, Card, Button, Header } from 'react-native-elements';
 import { connect } from 'react-redux';
 import axios from 'axios';
@@ -47,8 +47,10 @@ class CityWeather extends Component {
         return (
             <View>
                 <Header 
-                centerComponent={{ text: 'My Weather App', style: { color: '#fff' } }}
+                    centerComponent={{ text: 'My Weather App', style: { color: '#fff' } }}
                 />
+                <ScrollView>
+
                     <Card
                         title={this.props.selection.name}
                         titleStyle={styles.title}
@@ -79,6 +81,7 @@ class CityWeather extends Component {
                         title='Back To List'
                         onPress={() => this.props.navigation.navigate('WeatherLanding')}
                     />
+                </ScrollView>
             </View>
         );
     }
@@ -87,14 +90,15 @@ class CityWeather extends Component {
 
 const styles = StyleSheet.create({
     image: {
-        height: height/3.5 
+        height: height/3,
+         
     },
     title: {
-        fontSize: height/30
+        fontSize: height/45
     },
     todaysTemp: {
         marginBottom: height/100,
-        fontSize: height/35
+        fontSize: height/30
     },
     tomorrowStyle: {
         marginBottom: height/100,
